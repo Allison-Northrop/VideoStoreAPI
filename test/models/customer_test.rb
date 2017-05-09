@@ -34,6 +34,5 @@ describe "Customer" do
       result = customer.valid?
       result.must_equal false
     end
-
   end
 end
