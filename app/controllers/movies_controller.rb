@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
     if movie
       render json: movie, status: :ok
     else
-      render status: :not_found, json: { errors: { title: ["Movie '#{params[:title]}' not found"] } }
+      render status: :not_found, json: { errors: { title: "Movie '#{params[:title]}' not found" } }
     end
   end
 end
