@@ -11,6 +11,9 @@ describe Rental do
     end
 
     it "belongs to a movie" do
+      rental = rentals(:one)
+      rental.must_respond_to :movie
+      rental.movie.must_be_kind_of Movie
     end
   end
 
