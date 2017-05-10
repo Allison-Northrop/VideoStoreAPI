@@ -1,12 +1,6 @@
 require "test_helper"
 
 describe Movie do
-  # let(:movie) { Movie.new }
-  #
-  # it "must be valid" do
-  #   value(movie).must_be :valid?
-  # end
-
   describe "relations" do
     it "has a list of customers" do
       jaws = movies(:jaws)
@@ -52,7 +46,7 @@ describe Movie do
     end
 
     it "requires the inventory to be an integer" do
-      movie = Movie.new(inventory: "8")
+      movie = Movie.new(inventory: "e")
       movie.valid?.must_equal false
       movie.errors.messages.must_include :inventory
     end

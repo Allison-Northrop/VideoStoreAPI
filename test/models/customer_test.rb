@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "Customer" do
+describe Customer do
   describe "Validations" do
     it "Requires a name" do
       customer = Customer.create

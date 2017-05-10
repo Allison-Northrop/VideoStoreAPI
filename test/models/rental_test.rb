@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "Rental" do
+describe Rental do
   describe "relationships" do
     it "belongs to a customer" do
       # ar = Rental.reflect_on_association(:customers)
