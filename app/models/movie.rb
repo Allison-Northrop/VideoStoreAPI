@@ -6,11 +6,17 @@ class Movie < ApplicationRecord
   validates :inventory, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def available_inventory
-    inventory
+    rentals = Rental.where(returned: false, movie_id: id)
+    return inventory - rentals.count
   end
 
-  def reduce_inventory
-    self.inventory -= 1
-    self.save
-  end
+  # def reduce_inventory
+  #   self.inventory -= 1
+  #   self.save
+  # end
+  #
+  # def increase_inventory
+  #   self.inventory += 1
+  #   self.save
+  # end
 end
