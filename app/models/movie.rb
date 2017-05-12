@@ -8,4 +8,9 @@ class Movie < ApplicationRecord
   def available_inventory
     inventory
   end
+
+  def reduce_inventory
+    self.inventory -= 1
+    self.save
+  end
 end
