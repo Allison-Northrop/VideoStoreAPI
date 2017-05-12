@@ -21,7 +21,7 @@ class RentalsController < ApplicationController
       rental.update_attributes(returned: true)
       render json: { id: rental.id, returned: rental.returned }, status: :ok
     else
-      render status: :not_found, json: { errors: { rental: ["Current rental of '#{params[:title]}' not found"] } }
+      render status: :bad_request, json: { errors: { rental: ["There is no current rental of '#{params[:title]}'"] } }
     end
   end
 end
