@@ -10,13 +10,4 @@ class Movie < ApplicationRecord
     return inventory - rentals.count
   end
 
-  # def reduce_inventory
-  #   self.inventory -= 1
-  #   self.save
-  # end
-  #
-  # def increase_inventory
-  #   self.inventory += 1
-  #   self.save
-  # end
 end
